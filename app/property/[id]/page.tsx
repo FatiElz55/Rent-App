@@ -29,6 +29,13 @@ import {
   ChevronRight
 } from 'lucide-react';
 
+// Generate static params for all properties
+export function generateStaticParams() {
+  return mockProperties.map((property) => ({
+    id: property.id,
+  }));
+}
+
 export default function PropertyPage() {
   const { id } = useParams();
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
